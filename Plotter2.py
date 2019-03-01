@@ -7,7 +7,7 @@ import numpy
 import random
 from drawnow import *
 
-ser = serial.Serial(port='/dev/tty.usbmodem14611',
+ser = serial.Serial(port='/dev/tty.usbmodem000760002150',
 				baudrate=115200, timeout=None)
 
 
@@ -29,11 +29,11 @@ def setupGraph():
 	plt.ion() #Tell matplotlib you want interactive mode to plot live data
 	img = plt.imread("OmniFloor.jpg")
 	fig, ax = plt.subplots()
-	ax.imshow(img, extent = [-3.7, 15.2, -0.4, 20.5223])
+    #ax.imshow(img, extent = [-3.7, 15.2, -0.4, 20.5223])
 	#fig = plt.figure()
 	#ax = plt.axes(projection='3d')
-	plt.ylim(-5,25)                                #Set y min and max values
-	plt.xlim(-5,20)                                #Set y min and max values
+	plt.ylim(-5,5)                                #Set y min and max values
+	plt.xlim(-5,5)                                #Set y min and max values
 	plt.title('Accantus Live Positioning')      #Plot the title
 	plt.grid(True)                                  #Turn the grid on
 	plt.ylabel('m') 
@@ -132,7 +132,7 @@ def twoPoints():
 connectSerial()
 callLec()
 #testPoint()
-onePoint()
+twoPoints()
 
 #time.sleep(.5)
 #ser.write(b'?')

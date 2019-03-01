@@ -15,7 +15,7 @@ import serial
 
 
 try:
-	ser = serial.Serial(port='/dev/tty.usbmodem14121',
+	ser = serial.Serial(port='/dev/tty.usbmodem000760002150',
 				baudrate=115200, timeout=None)
 except:
 	print("ERROR: Unable to connect to the module. Check the cable or the port, it probably changed.")
@@ -164,7 +164,7 @@ def twoPoints():
 			dataArray = line.decode().split(',')   #Split it into an array called dataArray
 			qualityVal = float(dataArray[6])
 			if qualityVal > 85:
-				if dataArray[2] == '1737':
+				if dataArray[2] == '5B0E':
 					s_1.write(dict(x = float(dataArray[3]), y = float(dataArray[4])))     #plot the first point
 					#plt.pause(.005)                     #Pause Briefly. Important to keep drawnow from crashing
 					#p1.remove()
@@ -183,7 +183,7 @@ def twoPoints():
 def main():
 	connectSerial()
 	callLec()
-	onePoint()
+	twoPoints()
 	ser.close()
 
 main()

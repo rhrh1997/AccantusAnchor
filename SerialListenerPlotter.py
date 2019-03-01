@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy
 from drawnow import *
 
-ser = serial.Serial(port='/dev/tty.usbmodem14521',
+ser = serial.Serial(port='/dev/tty.usbmodem000760002150',
 					baudrate=115200, timeout=None)
 print(ser.name)
 ser.write(b'\r')

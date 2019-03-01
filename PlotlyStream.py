@@ -6,9 +6,9 @@ import plotly as plt
 import numpy
 from drawnow import *
 
-ser = serial.Serial(port='/dev/tty.usbmodem14611',
+ser = serial.Serial(port='/dev/tty.usbmodem000760002150',
 				baudrate=115200, timeout=None)
-plotly.tools.set_credentials_file(username='hassaanraza', api_key='czVpzjhNscjVYLHj0txF')
+plt.tools.set_credentials_file(username='hassaanraza', api_key='czVpzjhNscjVYLHj0txF')
 
 
 def connectSerial():
@@ -90,7 +90,7 @@ def twoPoints():
 		
 connectSerial()
 callLec()
-onePoint()
+twoPoints()
 
 #time.sleep(.5)
 #ser.write(b'?')
